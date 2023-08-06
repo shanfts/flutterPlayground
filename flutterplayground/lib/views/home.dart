@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterplayground/views/sample.dart';
 import 'package:flutterplayground/views/save_Button.dart';
 
 import 'image_upload.dart';
@@ -14,7 +15,7 @@ class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: Colors.brown,
       appBar: AppBar(
         centerTitle: true,
         title: const Text('H o m e'),
@@ -25,7 +26,11 @@ class _homeState extends State<home> {
             height: 60,
             width: 60,
           ),
-          ImageUploadButton()
+          ImageUploadButton(),
+          SizedBox(
+            height: 50,
+          ),
+          MyWidget(),
         ],
       ),
     );

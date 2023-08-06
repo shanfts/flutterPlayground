@@ -29,8 +29,3 @@ class _InsertCoachButtonState extends State<InsertCoachButton> {
     );
   }
 }
-
-// await SavedTable().insert({
-//           'id_users' = currentUserUid,
-//           'id_coach_sheet' = rowCoachSheetRow.id.toString(),
-//         });

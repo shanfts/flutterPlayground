@@ -28,9 +28,8 @@ class _SaveButtonState extends State<SaveButton> {
           });
         },
         icon: Icon(
-          isSaved
-              ? Icons.bookmark
-              : Icons.bookmark_border, // Change icon based on isSaved state
+          isSaved ? Icons.bookmark : Icons.bookmark_border,
+          size: 28, // Change icon based on isSaved state
         ),
       ),
     );
