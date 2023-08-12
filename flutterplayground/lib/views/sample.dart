@@ -22,6 +22,23 @@ class MyWidget extends StatelessWidget {
             height: 45,
             width: 45,
             decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 19, 16, 66),
+                borderRadius: BorderRadius.circular(15)),
+            child: IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.event,
+                  color: Colors.white,
+                  size: 25,
+                )),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 10),
+          child: Container(
+            height: 45,
+            width: 45,
+            decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(15)),
             child: IconButton(
                 onPressed: () {},
