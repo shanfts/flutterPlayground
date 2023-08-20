@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutterplayground/views/sample.dart';
+import 'package:flutterplayground/views/widget_1(StaticMapwithMArker).dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+import 'image_upload.dart';
 
 class home extends StatefulWidget {
   const home({super.key});
@@ -144,10 +147,14 @@ class _homeState extends State<home> {
           // SizedBox(
           //   height: 50,
           // ),
+          const ImageUploadButton(
+            userID: '1d75e822-bccb-432a-aedf-995239e46262',
+          ),
           const MyWidget(),
           ElevatedButton(
             onPressed: () {
               _showDateTimePickerDialog(context);
+              const Widget1();
             },
             child: const Text('Open Dialog'),
           )

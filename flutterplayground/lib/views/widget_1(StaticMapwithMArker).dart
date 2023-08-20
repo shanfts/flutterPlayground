@@ -13,7 +13,7 @@ import 'dart:ui' as ui;
 import 'package:http/http.dart' as http;
 
 class Widget1 extends StatefulWidget {
-  final LatLng vehicleLocation;
+  final LatLng? vehicleLocation;
   const Widget1({
     Key? key,
     this.width,
@@ -505,7 +505,7 @@ class _Widget1State extends State<Widget1> {
           map.BitmapDescriptor.fromBytes(resizedBytes.buffer.asUint8List());
       marker = map.Marker(
         markerId: const map.MarkerId('driver'),
-        position: widget.vehicleLocation,
+        position: widget.vehicleLocation!,
         icon: _customIcon!,
       );
     });
@@ -526,7 +526,7 @@ class _Widget1State extends State<Widget1> {
       onMapCreated: _onMapCreated,
       markers: {marker},
       initialCameraPosition: map.CameraPosition(
-        target: widget.vehicleLocation,
+        target: widget.vehicleLocation!,
         zoom: 15,
       ),
     ));
