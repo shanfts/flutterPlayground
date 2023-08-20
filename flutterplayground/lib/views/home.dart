@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutterplayground/views/sample.dart';
-import 'package:flutterplayground/views/widget_1(StaticMapwithMArker).dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import 'image_upload.dart';
+import 'navbar.dart';
 
 class home extends StatefulWidget {
   const home({super.key});
@@ -154,10 +154,10 @@ class _homeState extends State<home> {
           ElevatedButton(
             onPressed: () {
               _showDateTimePickerDialog(context);
-              const Widget1();
+              // const Widget1();
             },
             child: const Text('Open Dialog'),
-          )
+          ),
           // ElevatedButton(
           //   onPressed: () {
           //     Navigator.push(
@@ -170,6 +170,16 @@ class _homeState extends State<home> {
           //   },
           //   child: const Text('Go to New Page'),
           // )
+
+          Container(
+              height: 80,
+              width: 500,
+              decoration: const BoxDecoration(color: Colors.white),
+              child: const Row(
+                children: [
+                  SizedBox(height: 80, width: 400, child: CustomNavbar())
+                ],
+              )),
         ],
       ),
     );
