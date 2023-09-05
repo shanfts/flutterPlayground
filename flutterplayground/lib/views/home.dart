@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterplayground/views/rating_container.dart';
 import 'package:flutterplayground/views/sample.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -180,6 +181,8 @@ class _homeState extends State<home> {
                   SizedBox(height: 80, width: 400, child: CustomNavbar())
                 ],
               )),
+
+          const SizedBox(height: 100, width: 300, child: RatingContainer())
         ],
       ),
     );
