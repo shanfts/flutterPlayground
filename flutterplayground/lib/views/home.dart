@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterplayground/views/pdf.dart';
 import 'package:flutterplayground/views/rating_container.dart';
 import 'package:flutterplayground/views/sample.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -138,8 +139,9 @@ class _homeState extends State<home> {
         centerTitle: true,
         title: const Text('H o m e'),
       ),
-      body: Column(
+      body: const Column(
         children: [
+          SizedBox(height: 200, width: 300, child: PdfScreen())
           // SaveButton(
           //   height: 60,
           //   width: 60,
@@ -148,17 +150,17 @@ class _homeState extends State<home> {
           // SizedBox(
           //   height: 50,
           // ),
-          const ImageUploadButton(
-            userID: '1d75e822-bccb-432a-aedf-995239e46262',
-          ),
-          const MyWidget(),
-          ElevatedButton(
-            onPressed: () {
-              _showDateTimePickerDialog(context);
-              // const Widget1();
-            },
-            child: const Text('Open Dialog'),
-          ),
+          // const ImageUploadButton(
+          //   userID: '1d75e822-bccb-432a-aedf-995239e46262',
+          // ),
+          // const MyWidget(),
+          // ElevatedButton(
+          //   onPressed: () {
+          //     _showDateTimePickerDialog(context);
+          //     // const Widget1();
+          //   },
+          //   child: const Text('Open Dialog'),
+          // ),
           // ElevatedButton(
           //   onPressed: () {
           //     Navigator.push(
@@ -172,17 +174,17 @@ class _homeState extends State<home> {
           //   child: const Text('Go to New Page'),
           // )
 
-          Container(
-              height: 80,
-              width: 500,
-              decoration: const BoxDecoration(color: Colors.white),
-              child: const Row(
-                children: [
-                  SizedBox(height: 80, width: 400, child: CustomNavbar())
-                ],
-              )),
+          // Container(
+          //     height: 80,
+          //     width: 500,
+          //     decoration: const BoxDecoration(color: Colors.white),
+          //     child: const Row(
+          //       children: [
+          //         SizedBox(height: 80, width: 400, child: CustomNavbar())
+          //       ],
+          //     )),
 
-          const SizedBox(height: 100, width: 300, child: RatingContainer())
+          // const SizedBox(height: 100, width: 300, child: RatingContainer())
         ],
       ),
     );
