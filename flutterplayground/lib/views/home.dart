@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutterplayground/views/pdf.dart';
+import 'package:flutterplayground/views/trip_Completed.dart';
 import 'package:flutterplayground/views/rating_container.dart';
 import 'package:flutterplayground/views/sample.dart';
+import 'package:flutterplayground/views/trip_request.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import 'image_upload.dart';
@@ -141,7 +142,7 @@ class _homeState extends State<home> {
       ),
       body: const Column(
         children: [
-          SizedBox(height: 200, width: 300, child: PdfScreen())
+          Expanded(child: tripRequest())
           // SaveButton(
           //   height: 60,
           //   width: 60,

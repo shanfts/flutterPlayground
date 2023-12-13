@@ -43,21 +43,21 @@ class _PdfScreenState extends State<PdfScreen> {
                           text: 'Date: ',
                           style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
                       const pw.TextSpan(
-                          text: '12/16 12:54',
+                          text: '12/10/2023 @ 12:30 PM',
                           style: pw.TextStyle(
                               decoration: pw.TextDecoration.underline)),
                       pw.TextSpan(
                           text: '     Departure Time: ',
                           style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
                       const pw.TextSpan(
-                          text: '22:54',
+                          text: '12/10/2023 @ 12:30 PM',
                           style: pw.TextStyle(
                               decoration: pw.TextDecoration.underline)),
                       pw.TextSpan(
-                          text: '       Arrival Time: ',
+                          text: '       \n\nArrival Time: ',
                           style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
                       const pw.TextSpan(
-                          text: '14:54',
+                          text: '12/10/2023 @ 12:30 PM',
                           style: pw.TextStyle(
                               decoration: pw.TextDecoration.underline)),
                     ])),
@@ -95,7 +95,7 @@ class _PdfScreenState extends State<PdfScreen> {
                 pw.SizedBox(height: 20),
                 pw.Center(
                   child: pw.Container(
-                    height: 150,
+                    height: 100,
                     width: 500,
                     decoration: pw.BoxDecoration(
                       color: PdfColors.blue100,
@@ -109,6 +109,9 @@ class _PdfScreenState extends State<PdfScreen> {
                   ),
                 ),
                 pw.SizedBox(height: 20),
+                pw.Text('Checked Out Riders: ',
+                    style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
+                pw.SizedBox(height: 10),
                 pw.Center(
                   child: pw.Container(
                     height: 200,
@@ -124,6 +127,9 @@ class _PdfScreenState extends State<PdfScreen> {
                   ),
                 ),
                 pw.SizedBox(height: 20),
+                pw.Text('Check Out Faculty: ',
+                    style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
+                pw.SizedBox(height: 10),
                 pw.Container(
                   height: 200,
                   width: 500,
@@ -307,9 +313,6 @@ class _PdfScreenState extends State<PdfScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('PDF Generator'),
-      ),
       body: Center(
         child: ElevatedButton(
           onPressed: () async {
@@ -324,7 +327,7 @@ class _PdfScreenState extends State<PdfScreen> {
 }
 
 List<List<String>> table1Data = [
-  ['Checked Out Riders', 'B1', 'C1', 'D1'],
+  ['A1', 'B1', 'C1', 'D1'],
   ['A2', 'B2', 'C2', 'D2'],
   ['A3', 'B3', 'C3', 'D3'],
   ['A4', 'B4', 'C4', 'D4'],
@@ -332,7 +335,7 @@ List<List<String>> table1Data = [
 ];
 
 List<List<String>> table2Data = [
-  ['Checked Out Faculty', 'B1', 'C1', 'D1'],
+  ['A1', 'B1', 'C1', 'D1'],
   ['A2', 'B2', 'C2', 'D2'],
   ['A3', 'B3', 'C3', 'D3'],
   ['A4', 'B4', 'C4', 'D4'],
