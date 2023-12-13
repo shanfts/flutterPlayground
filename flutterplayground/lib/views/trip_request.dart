@@ -565,16 +565,12 @@ class _tripRequestState extends State<tripRequest> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () async {
-            Uint8List newPdfBytes = await generatePDF();
-            await _openFile(newPdfBytes);
-          },
-          child: const Text('Generate and Open PDF'),
-        ),
-      ),
+    return ElevatedButton(
+      onPressed: () async {
+        Uint8List newPdfBytes = await generatePDF();
+        await _openFile(newPdfBytes);
+      },
+      child: const Text('Generate and Open PDF'),
     );
   }
 }

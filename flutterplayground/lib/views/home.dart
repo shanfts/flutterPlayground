@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterplayground/views/completed_Route.dart';
 import 'package:flutterplayground/views/trip_Completed.dart';
 import 'package:flutterplayground/views/rating_container.dart';
 import 'package:flutterplayground/views/sample.dart';
@@ -141,14 +142,15 @@ class _homeState extends State<home> {
         title: const Text('H o m e'),
       ),
       body: const Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(child: tripRequest())
+          SizedBox(height: 60, width: 200, child: completedRoute())
           // SaveButton(
           //   height: 60,
           //   width: 60,
           // ),
           // ImageUploadButton(),
-          // SizedBox(
+          // SizedBox(E:\Flutter Projects\Flutter Apps with Github repos\flutterPlayground\flutterplayground\lib\views\home.dart
           //   height: 50,
           // ),
           // const ImageUploadButton(

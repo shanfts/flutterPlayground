@@ -6,14 +6,14 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'package:open_file/open_file.dart';
 
-class tripCompleted extends StatefulWidget {
-  const tripCompleted({super.key});
+class completedRoute extends StatefulWidget {
+  const completedRoute({super.key});
 
   @override
-  _tripCompletedState createState() => _tripCompletedState();
+  _completedRouteState createState() => _completedRouteState();
 }
 
-class _tripCompletedState extends State<tripCompleted> {
+class _completedRouteState extends State<completedRoute> {
   late Future<Uint8List> pdfFuture;
 
   Future<Uint8List> generatePDF() async {
@@ -28,7 +28,7 @@ class _tripCompletedState extends State<tripCompleted> {
               crossAxisAlignment: pw.CrossAxisAlignment.start,
               children: [
                 pw.Center(
-                  child: pw.Text('Trip Completed',
+                  child: pw.Text('Completed Route',
                       style: pw.TextStyle(
                           fontSize: 14, fontWeight: pw.FontWeight.bold)),
                 ),
@@ -47,17 +47,17 @@ class _tripCompletedState extends State<tripCompleted> {
                           style: pw.TextStyle(
                               decoration: pw.TextDecoration.underline)),
                       pw.TextSpan(
-                          text: '     Departure Time: ',
+                          text: '     Driver: ',
                           style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
                       const pw.TextSpan(
-                          text: '12/10/2023 @ 12:30 PM',
+                          text: 'David Warner',
                           style: pw.TextStyle(
                               decoration: pw.TextDecoration.underline)),
                       pw.TextSpan(
-                          text: '       \n\nArrival Time: ',
+                          text: '     \n\nVehicle ID: ',
                           style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
                       const pw.TextSpan(
-                          text: '12/10/2023 @ 12:30 PM',
+                          text: '878349873',
                           style: pw.TextStyle(
                               decoration: pw.TextDecoration.underline)),
                     ])),
@@ -69,33 +69,31 @@ class _tripCompletedState extends State<tripCompleted> {
                         ),
                         children: [
                       pw.TextSpan(
-                          text: 'Driver: ',
+                          text: 'Start Time: ',
                           style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
                       const pw.TextSpan(
-                          text: 'David Warner',
+                          text: '12/10/2023 @ 12:30 PM',
                           style: pw.TextStyle(
                               decoration: pw.TextDecoration.underline)),
                       pw.TextSpan(
-                          text: '     Vehicle ID: ',
+                          text: '     End Time: ',
                           style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
                       const pw.TextSpan(
-                          text: '878349873',
+                          text: '12/10/2023 @ 01:30 PM',
+                          style: pw.TextStyle(
+                              decoration: pw.TextDecoration.underline)),
+                      pw.TextSpan(
+                          text: '     Duration: ',
+                          style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
+                      const pw.TextSpan(
+                          text: '1:00 hour',
                           style: pw.TextStyle(
                               decoration: pw.TextDecoration.underline)),
                     ])),
                 pw.SizedBox(height: 20),
-                pw.Text('Details: ',
-                    style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
-                pw.SizedBox(height: 10),
-                pw.Text(
-                    "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
-                    style: const pw.TextStyle(
-                        lineSpacing: 5,
-                        decoration: pw.TextDecoration.underline)),
-                pw.SizedBox(height: 20),
                 pw.Center(
                   child: pw.Container(
-                    height: 100,
+                    height: 150,
                     width: 500,
                     decoration: pw.BoxDecoration(
                       color: PdfColors.blue100,
@@ -109,7 +107,7 @@ class _tripCompletedState extends State<tripCompleted> {
                   ),
                 ),
                 pw.SizedBox(height: 20),
-                pw.Text('Checked Out Riders: ',
+                pw.Text('Completed Stops: ',
                     style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
                 pw.SizedBox(height: 10),
                 pw.Center(
@@ -123,11 +121,11 @@ class _tripCompletedState extends State<tripCompleted> {
                         width: 1, // Change the width of the border
                       ),
                     ),
-                    child: table1,
+                    child: completedStopsVar,
                   ),
                 ),
                 pw.SizedBox(height: 20),
-                pw.Text('Check Out Faculty: ',
+                pw.Text('Checked Out Riders: ',
                     style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
                 pw.SizedBox(height: 10),
                 pw.Container(
@@ -139,8 +137,24 @@ class _tripCompletedState extends State<tripCompleted> {
                       width: 1, // Change the width of the border
                     ),
                   ),
-                  child: table2,
+                  child: checkedOutRidersVar,
                 ),
+                pw.SizedBox(height: 20),
+                pw.RichText(
+                    text: pw.TextSpan(
+                        style: const pw.TextStyle(
+                          fontSize: 14,
+                        ),
+                        children: [
+                      pw.TextSpan(
+                          text: 'Rider Conduct: ',
+                          style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
+                      const pw.TextSpan(
+                          text:
+                              "There are many variations of passages of Lorem Ipsum available.",
+                          style: pw.TextStyle(
+                              decoration: pw.TextDecoration.underline)),
+                    ])),
               ]);
         },
       ),
@@ -155,51 +169,6 @@ class _tripCompletedState extends State<tripCompleted> {
             child: pw.Column(
                 crossAxisAlignment: pw.CrossAxisAlignment.start,
                 children: [
-                  pw.Container(
-                    height: 200,
-                    width: 500,
-                    decoration: pw.BoxDecoration(
-                      border: pw.Border.all(
-                        color:
-                            PdfColors.black, // Change the color of the border
-                        width: 1, // Change the width of the border
-                      ),
-                    ),
-                    child: table3,
-                  ),
-                  pw.SizedBox(height: 20),
-                  pw.RichText(
-                      text: pw.TextSpan(
-                          style: const pw.TextStyle(
-                            fontSize: 14,
-                          ),
-                          children: [
-                        pw.TextSpan(
-                            text: 'Total Cost: ',
-                            style:
-                                pw.TextStyle(fontWeight: pw.FontWeight.bold)),
-                        const pw.TextSpan(
-                            text: "\$1037",
-                            style: pw.TextStyle(
-                                decoration: pw.TextDecoration.underline)),
-                      ])),
-                  pw.SizedBox(height: 20),
-                  pw.RichText(
-                      text: pw.TextSpan(
-                          style: const pw.TextStyle(
-                            fontSize: 14,
-                          ),
-                          children: [
-                        pw.TextSpan(
-                            text: 'Rider Conduct: ',
-                            style:
-                                pw.TextStyle(fontWeight: pw.FontWeight.bold)),
-                        const pw.TextSpan(
-                            text:
-                                "There are many variations of passages of Lorem Ipsum available.",
-                            style: pw.TextStyle(
-                                decoration: pw.TextDecoration.underline)),
-                      ])),
                   pw.SizedBox(height: 20),
                   pw.Text('Rider Conduct Notes: ',
                       style: pw.TextStyle(fontWeight: pw.FontWeight.bold)),
@@ -245,16 +214,16 @@ class _tripCompletedState extends State<tripCompleted> {
     return pdf.save();
   }
 
-  pw.Table table1 = pw.Table(
+  pw.Table completedStopsVar = pw.Table(
     border: pw.TableBorder.all(color: PdfColors.black),
-    children: List.generate(table1Data.length, (index) {
+    children: List.generate(completedStops.length, (index) {
       return pw.TableRow(
-        children: List.generate(table1Data[index].length, (index2) {
+        children: List.generate(completedStops[index].length, (index2) {
           return pw.Container(
             alignment: pw.Alignment.center,
             padding: const pw.EdgeInsets.all(5),
             child: pw.Text(
-              table1Data[index][index2],
+              completedStops[index][index2],
               style: const pw.TextStyle(fontSize: 12),
             ),
           );
@@ -263,33 +232,16 @@ class _tripCompletedState extends State<tripCompleted> {
     }),
   );
 
-  pw.Table table2 = pw.Table(
+  pw.Table checkedOutRidersVar = pw.Table(
     border: pw.TableBorder.all(color: PdfColors.black),
-    children: List.generate(table2Data.length, (index) {
+    children: List.generate(checkedOutRiders.length, (index) {
       return pw.TableRow(
-        children: List.generate(table2Data[index].length, (index2) {
+        children: List.generate(checkedOutRiders[index].length, (index2) {
           return pw.Container(
             alignment: pw.Alignment.center,
             padding: const pw.EdgeInsets.all(5),
             child: pw.Text(
-              table2Data[index][index2],
-              style: const pw.TextStyle(fontSize: 12),
-            ),
-          );
-        }),
-      );
-    }),
-  );
-  pw.Table table3 = pw.Table(
-    border: pw.TableBorder.all(color: PdfColors.black),
-    children: List.generate(table3Data.length, (index) {
-      return pw.TableRow(
-        children: List.generate(table3Data[index].length, (index2) {
-          return pw.Container(
-            alignment: pw.Alignment.center,
-            padding: const pw.EdgeInsets.all(5),
-            child: pw.Text(
-              table3Data[index][index2],
+              checkedOutRiders[index][index2],
               style: const pw.TextStyle(fontSize: 12),
             ),
           );
@@ -322,25 +274,17 @@ class _tripCompletedState extends State<tripCompleted> {
   }
 }
 
-List<List<String>> table1Data = [
-  ['A1', 'B1', 'C1', 'D1'],
+List<List<String>> completedStops = [
+  ['Stop Name', 'Time Completed', 'Time at Stop', 'Type'],
   ['A2', 'B2', 'C2', 'D2'],
   ['A3', 'B3', 'C3', 'D3'],
   ['A4', 'B4', 'C4', 'D4'],
   ['A5', 'B5', 'C5', 'D5'],
 ];
 
-List<List<String>> table2Data = [
+List<List<String>> checkedOutRiders = [
   ['A1', 'B1', 'C1', 'D1'],
   ['A2', 'B2', 'C2', 'D2'],
-  ['A3', 'B3', 'C3', 'D3'],
-  ['A4', 'B4', 'C4', 'D4'],
-  ['A5', 'B5', 'C5', 'D5'],
-];
-
-List<List<String>> table3Data = [
-  ['Cost Item', 'Quantity', 'Cost(\$)', 'Total'],
-  ['title', 'quantity', 'cost', 'total'],
   ['A3', 'B3', 'C3', 'D3'],
   ['A4', 'B4', 'C4', 'D4'],
   ['A5', 'B5', 'C5', 'D5'],
